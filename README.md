@@ -8,9 +8,7 @@ This solution guide will assist you with the full installation of:
 5. AI Monitor for monitoring CPU, memory, GPU and VRAM utilization on your system
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
-8. Vicuna 7B as well as Meta Open Pre-Trained Transformer 350m (OPT-350) language models
-
-Note - the OPT-350 LLM is included mostly to show how far things have progressed in less than 1 year.
+8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included (see below)
 
 ### Pre-requisites
 
@@ -81,4 +79,6 @@ python3 download-model.py TheBloke/Wizard-Vicuna-13B-Uncensored-HF
 ```
 
 Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model you would like.
+
+Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year.
 
