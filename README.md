@@ -26,7 +26,7 @@ Using Intersight select server and perform automated OS install. Use the custom 
 
 ### 3. Install Additional Software
 
-SSH into the server for the first time as username ubuntu and run the following script (one-time):
+SSH into the server for the first time as username ubuntu and run the following commands (one-time):
 ```
 wget https://github.com/pl247/ai-install/raw/main/ai-install.sh
 chmod a+x ai-install.sh
@@ -34,6 +34,8 @@ chmod a+x ai-install.sh
 ```
 
 ### Running the server software for the first time using CPU
+
+Acivate the textgen environment in conda, move to the server directory and start the text generation server:
 
 ```
 conda activate textgen
@@ -52,6 +54,9 @@ cd text-generation-webui
 python server.py --listen --auto-devices --chat --model-menu --gpu-memory 76
 ```
 
-
+If you have an NVIDIA GPU then you can also simultaneously monitor the system using that tool that was installed:
+```
+/ai/ai-monitor/ai-monitor
+```
 
 
