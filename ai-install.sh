@@ -7,10 +7,17 @@ sudo mkdir /ai/software
 
 # Get NVIDIA GPU Drivers as well as CUDA
 echo "==================Get NVIDIA GPU Drivers as well as CUDA=================="
-sudo wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb -P /ai/software
-sudo dpkg -i /ai/software/cuda-keyring_1.0-1_all.deb
+#sudo wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.0-1_all.deb -P /ai/software
+#sudo dpkg -i /ai/software/cuda-keyring_1.0-1_all.deb
+#sudo apt-get update
+#sudo apt-get -y install cuda
+sudo wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/cuda-ubuntu2004.pin -P /ai/software
+sudo mv /ai/software/cuda-ubuntu2004.pin /etc/apt/preferences.d/cuda-repository-pin-600
+sudo wget https://developer.download.nvidia.com/compute/cuda/11.7.0/local_installers/cuda-repo-ubuntu2004-11-7-local_11.7.0-515.43.04-1_amd64.deb -P /ai/software
+sudo dpkg -i /ai/software/cuda-repo-ubuntu2004-11-7-local_11.7.0-515.43.04-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2004-11-7-local/cuda-*-keyring.gpg /usr/share/keyrings/
 sudo apt-get update
-sudo apt-get -y install cuda
+sudo apt-get install cuda-11-7
 
 # Get AI Monitor
 echo "==================Get AI Monitor=========================================="

@@ -43,6 +43,12 @@ chmod a+x ai-install.sh
 ./ai-install.sh
 ```
 
+YOU WILL NEED TO REBOOT to activate your NVIDIA GPU drivers.
+
+```
+sudo reboot
+```
+
 ### Running the server software for the first time using CPU
 
 Acivate the textgen environment in conda, move to the server directory and start the text generation server:
