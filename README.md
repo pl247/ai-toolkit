@@ -18,11 +18,21 @@ The provided files will automate the full installation of:
 
 ### 1. Create Server Profile
 
-Derive server-profile from bare-metal linux template
+In Intersight, derive and deploy a server-profile from a bare-metal linux template to a UCS X-Series X210c compute node. Basically all that is required is:
+1. Boot from M.2 RAID
+2. Single ethernet NIC with fabric failover (for redundancy)
 
 ### 2. Install OS on Server
 
-Using Intersight select server and perform automated OS install. Use the custom OS install script from this repo called llm-bmaas.cfg You will want to modify the cloud-init settings for: password, address, gateway4 and nameservers.
+From Intersight, select server and perform automated OS install. Use the custom OS install script from this repo called llm-bmaas.cfg You will want to modify the cloud-init settings for: password, address, gateway4 and nameservers.
+
+The following combination has been tested:
+1. OS Image - ubuntu-22.04.2-live-server-amd64.iso as version Ubuntu Server 22.04 LTS
+2. SCU Image - ucs-scu-6.3.1a.iso as version 6.3.1a
+3. OS Configuration File - llm-bmaas.cfg as version Ubuntu Server 22.04 LTS
+
+Other combinations may work, but please try these before asking for assistance.
+
 
 ### 3. Install Additional Software
 
