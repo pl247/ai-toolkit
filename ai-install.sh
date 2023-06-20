@@ -90,8 +90,8 @@ pip install -r /home/ubuntu/text-generation-webui/requirements.txt
 # Install first LLM model
 echo "==================Installing LLM Models=========================================="
 cd /home/ubuntu/text-generation-webui
-python3 download-model.py facebook/opt-350m
-python3 download-model.py TheBloke/vicuna-7B-1.1-HF
+#python3 download-model.py facebook/opt-350m
+#python3 download-model.py TheBloke/vicuna-7B-1.1-HF
 #python3 download-model.py TheBloke/vicuna-13B-1.1-HF
 #python3 download-model.py TheBloke/Wizard-Vicuna-30B-Uncensored-fp16
 
