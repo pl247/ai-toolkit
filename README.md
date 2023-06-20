@@ -66,7 +66,7 @@ cd text-generation-webui
 python server.py --listen --auto-devices --chat --model-menu --gpu-memory 76
 ```
 
-If you have an NVIDIA GPU then you can also simultaneously monitor the system using that tool that was installed:
+If you have an NVIDIA GPU then you can also simultaneously monitor the system using the ai-monitor tool that was installed:
 ```
 /ai/ai-monitor/ai-monitor
 ```
