@@ -1,14 +1,16 @@
 # Automated Installation of Large Language Models on UCS X-Series
 
-The provided files will automate the full installation of:
+This solution guide will assist you with the full installation of:
 1. Ubuntu 22.04 LTS operating system
-2. GCC which is required for development using the NVIDIA parallel computing and programming environment (CUDA)
+2. GCC compiler required for development using the NVIDIA parallel computing and programming environment (CUDA)
 3. NVIDIA GPU drivers as well as CUDA
-4.  Miniconda which is a package, dependency and environment manager for programming languages (IE: python and C++). Miniconda is a minimal distribution of Anaconda that includes only conda, python, pip and some other useful packages. Very useful for data science as it includes a lot of dependencies in the package.
-5. AI Monitor is a tool for monitoring CPU, memory, GPU and VRAM utilization on your system
-6. WebUI is a simple user interface for testing and fine-tuning large language models
+4.  Miniconda package, dependency and environment manager for programming languages (IE: python and C++). Miniconda is a minimal distribution of Anaconda that includes only conda, python, pip and some other useful packages. Very useful for data science as it includes a lot of dependencies in the package.
+5. AI Monitor for monitoring CPU, memory, GPU and VRAM utilization on your system
+6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
-8. Vicuna 7B large language model 
+8. Vicuna 7B as well as Meta Open Pre-Trained Transformer 350m (OPT-350) language models
+
+Note - the OPT-350 LLM is included mostly to show how far things have progressed in less than 1 year.
 
 ### Pre-requisites
 
@@ -69,4 +71,14 @@ If you have an NVIDIA GPU then you can also simultaneously monitor the system us
 /ai/ai-monitor/ai-monitor
 ```
 
+### Downloading Additional Models
+
+Check out the Hugging Face leader board: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard and then download any of the models you would like to try using the following commands:
+
+```
+cd cd text-generation-webui
+python3 download-model.py TheBloke/Wizard-Vicuna-13B-Uncensored-HF
+```
+
+Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model you would like.
 

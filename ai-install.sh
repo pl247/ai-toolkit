@@ -52,7 +52,7 @@ pip install -r /home/ubuntu/text-generation-webui/requirements.txt
 echo "==================Installing LLM Models=========================================="
 cd /home/ubuntu/text-generation-webui
 python3 download-model.py facebook/opt-350m
-#python3 download-model.py TheBloke/vicuna-7B-1.1-HF
+python3 download-model.py TheBloke/vicuna-7B-1.1-HF
 
 # Clean up tasks
 echo "==================For changes to take effect, close and re-open current shell ========================="
