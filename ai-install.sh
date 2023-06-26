@@ -1,8 +1,8 @@
 #!/bin/bash
-echo "Running commands as a root user..."
+echo -e "\nRunning commands as a root user..."
 
 # Create software directories
-echo -e "\n==================Creating software directories=================="
+echo -e "\n==================Creating software directories==========================="
 sleep 3
 sudo mkdir /ai
 sudo mkdir /ai/software
@@ -46,19 +46,19 @@ sudo apt-get -y install cuda
 
 
 # Get AI Monitor
-echo -e "\n\n==================Get AI Monitor=========================================="
+echo -e "\n==================Get AI Monitor========================================="
 sleep 3
 sudo git -C /ai clone https://github.com/pl247/ai-monitor
 sudo chmod a+x /ai/ai-monitor
 
 # Install Miniconda
-echo "==================Get Miniconda=========================================="
+echo -e "\n==================Get Miniconda=========================================="
 sleep 3
 sudo wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh -P /ai/software
 sudo chmod -v +x /ai/software/Miniconda3-py39_4.12.0-Linux-x86_64.sh
 sudo /ai/software/Miniconda3-py39_4.12.0-Linux-x86_64.sh -b -p /ai/miniconda
 
-echo "End of running commands as root."
+echo -e "\nEnd of running commands as root."
 
 # Modify PATH
 echo -e "\n==================Updating PATH=========================================="
@@ -70,25 +70,25 @@ source .bashrc
 
 
 # Create new conda environment
-echo "==================Create New Conda Environment============================"
+echo -e "\n==================Create New Conda Environment==========================="
 sleep 1
 conda init bash
 conda create -n textgen python=3.10.9
 conda activate textgen
 
 # Install pytorch
-echo "==================Installing Pytorch======================================="
+echo -e "\n==================Installing Pytorch====================================="
 sleep 1
 pip3 install torch torchvision torchaudio
 
 # Install web UI
-echo "==================Installing WebUI=========================================="
+echo -e "\n==================Installing WebUI======================================="
 sleep 1
 git -C /home/ubuntu clone https://github.com/oobabooga/text-generation-webui
 pip install -r /home/ubuntu/text-generation-webui/requirements.txt
 
 # Install first LLM model
-echo "==================Installing LLM Models=========================================="
+echo -e "\n==================Installing LLM Models=================================="
 cd /home/ubuntu/text-generation-webui
 #python3 download-model.py facebook/opt-350m
 #python3 download-model.py TheBloke/vicuna-7B-1.1-HF
@@ -96,5 +96,5 @@ cd /home/ubuntu/text-generation-webui
 #python3 download-model.py TheBloke/Wizard-Vicuna-30B-Uncensored-fp16
 
 # Clean up tasks
-echo -e "\n\n==================For changes to take effect, close and re-open current shell =============="
+echo -e "\n\n===============Restart the system with 'sudo reboot' for GPU to work =="
 sleep 3
