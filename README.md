@@ -1,11 +1,5 @@
 # Automated Installation of Large Language Models on UCS X-Series
 
-<img
-  src="llm_stack.jpg"
-  alt="AI Stack"
-  title="AI Stack"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
-
 This solution guide will assist you with the full installation of:
 1. Ubuntu 22.04 LTS operating system
 2. GCC compiler required for development using the NVIDIA parallel computing and programming environment (CUDA)
@@ -15,6 +9,12 @@ This solution guide will assist you with the full installation of:
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
 8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included (see below)
+
+<img
+  src="llm_stack.jpg"
+  alt="AI Stack"
+  title="AI Stack"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
 
 ### Pre-requisites
 
