@@ -9,13 +9,11 @@ This solution guide will assist you with the full installation of:
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
 8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included (see below)
-
 <img
   src="llm_stack.jpg"
   alt="AI Stack"
   title="AI Stack"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
-
 ### Pre-requisites
 
 1. Cisco UCS X-series w/ X440p PCIe node and NVIDIA A100 GPU
