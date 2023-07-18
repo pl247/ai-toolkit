@@ -90,5 +90,5 @@ python3 download-model.py TheBloke/Wizard-Vicuna-13B-Uncensored-HF
 
 Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model you would like.
 
-Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year.
+Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year. 
 
