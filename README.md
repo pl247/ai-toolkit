@@ -1,5 +1,11 @@
 # Automated Installation of Large Language Models on UCS X-Series
 
+<img
+  src="x-series_gpu.jpg"
+  alt="UCS X-Series"
+  title="UCS X-Series"
+  style="display: inline-block; margin: 0 auto; max-width: 300px">
+
 This solution guide will assist you with the full installation of:
 1. Ubuntu 22.04 LTS operating system
 2. GCC compiler required for development using the NVIDIA parallel computing and programming environment (CUDA)
