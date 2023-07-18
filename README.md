@@ -4,7 +4,7 @@
   src="x-series_gpu.jpg"
   alt="UCS X-Series"
   title="UCS X-Series"
-  style="display: inline-block; margin: 0 auto; max-width: 300px">
+  style="display: inline-block; margin: 0 auto; max-width: 250px">
 
 This solution guide will assist you with the full installation of:
 1. Ubuntu 22.04 LTS operating system
