@@ -53,6 +53,8 @@ chmod a+x ai-install.sh
 ./ai-install.sh
 ```
 
+Answer yes when asked if you want to proceed during the miniconda install.
+
 YOU WILL NEED TO REBOOT to activate your NVIDIA GPU drivers.
 
 ```

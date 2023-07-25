@@ -43,12 +43,10 @@ echo -e "\nEnd of running commands as root."
 # Modify PATH
 echo -e "\n==================Updating PATH=========================================="
 sleep 1
-#sudo chown ubuntu:ubuntu /home/ubuntu/.bashrc
 eval "$(/ai/miniconda/bin/conda shell.bash hook)"
 echo 'export PATH="/ai/miniconda/bin:/ai/miniconda/condabin:/usr/local/cuda/bin:$PATH"' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"' >> ~/.bashrc
 source .bashrc
-
 
 # Create new conda environment
 echo -e "\n==================Create New Conda Environment==========================="
