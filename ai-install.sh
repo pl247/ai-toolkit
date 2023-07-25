@@ -25,7 +25,6 @@ sudo cp /var/cuda-repo-ubuntu2204-11-8-local/cuda-*-keyring.gpg /usr/share/keyri
 sudo apt-get update
 sudo apt-get -y install cuda
 
-
 # Get AI Monitor
 echo -e "\n==================Get AI Monitor========================================="
 sleep 3
@@ -44,6 +43,7 @@ echo -e "\nEnd of running commands as root."
 # Modify PATH
 echo -e "\n==================Updating PATH=========================================="
 sleep 1
+#sudo chown ubuntu:ubuntu /home/ubuntu/.bashrc
 eval "$(/ai/miniconda/bin/conda shell.bash hook)"
 echo 'export PATH="/ai/miniconda/bin:/ai/miniconda/condabin:/usr/local/cuda/bin:$PATH"' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"' >> ~/.bashrc
