@@ -23,6 +23,8 @@ This solution guide will assist you with the full installation of:
   title="AI Stack"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
+## Installing the AI-Toolkit
+
 ### Pre-requisites
 
 1. Cisco UCS X-series w/ X440p PCIe node and NVIDIA A100 GPU
@@ -63,7 +65,7 @@ YOU WILL NEED TO REBOOT to activate your NVIDIA GPU drivers.
 sudo reboot
 ```
 
-## Running the server software for the first time using CPU
+## Running the TextGen server software for the first time using CPU
 
 Acivate the textgen environment in conda, move to the server directory and start the text generation server:
 
@@ -89,7 +91,7 @@ If you have an NVIDIA GPU then you can also simultaneously monitor the system us
 /ai/ai-monitor/ai-monitor
 ```
 
-### Downloading Additional Models
+### Downloading Additional Models for TextGen
 
 Check out the Hugging Face leader board: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard and then download any of the models you would like to try using the following commands:
 
@@ -102,7 +104,7 @@ Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model
 
 Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year. 
 
-## Retrieval Augmented Generation (RAG) on private documents
+## Retrieval Augmented Generation (RAG) on Private Documents
 
 To perform inferencing on private localized data on your system, perform the following tasks:
 1. Move to the doc-inferencing directory
