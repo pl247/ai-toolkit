@@ -9,10 +9,10 @@ Generative AI is an exciting and emerging space. Running large language models (
   style="display: inline-block; margin: 0 auto; max-width: 150px">
 
 This solution guide will assist you with the full installation of:
-1. Ubuntu 22.04 LTS operating system
+1. Ubuntu linux operating system including various common utilities
 2. GCC compiler required for development using the NVIDIA parallel computing and programming environment (CUDA)
 3. NVIDIA GPU drivers as well as CUDA
-4.  Miniconda package, dependency and environment manager for programming languages (IE: python and C++). Miniconda is a minimal distribution of Anaconda that includes only conda, python, pip and some other useful packages. Very useful for data science as it includes a lot of dependencies in the package.
+4. Miniconda package, dependency and environment manager for programming languages (IE: python and C++). Miniconda is a minimal distribution of Anaconda that includes only conda, python, pip and some other useful packages. Very useful for data science as it includes a lot of dependencies in the package.
 5. AI Monitor for monitoring CPU, memory, GPU and VRAM utilization on your system
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
@@ -68,7 +68,7 @@ sudo reboot
 
 ## Running the TextGen server software for the first time using CPU
 
-Acivate the textgen environment in conda, move to the server directory and start the text generation server:
+Activate the textgen environment in conda, move to the correct directory and start the text generation server:
 
 ```
 conda activate textgen
