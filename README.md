@@ -17,6 +17,7 @@ This solution guide will assist you with the full installation of:
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
 8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included
+9. Software to perform inferencing on locally hosted private documents using LangChain, Chroma on the most popular HuggingFace embedding models and LLMs
 <img
   src="llm_stack.jpg"
   alt="AI Stack"
@@ -134,7 +135,7 @@ wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-compu
 wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x440p-specsheet.pdf
 ```
 
-###Troubleshooting
+### Troubleshooting
 
 If wget doesn't work try the following workaround:
 
