@@ -63,7 +63,7 @@ YOU WILL NEED TO REBOOT to activate your NVIDIA GPU drivers.
 sudo reboot
 ```
 
-### Running the server software for the first time using CPU
+## Running the server software for the first time using CPU
 
 Acivate the textgen environment in conda, move to the server directory and start the text generation server:
 
@@ -76,7 +76,7 @@ python server.py --listen --auto-devices --chat --model-menu --cpu
 To access the application, open a web browser to your server IP address on port 7860.
 http://10.0.0.10:7860
 
-### Running the server software for the first time using A100-80GB GPU
+### Running the text-generation server software for the first time using A100-80GB GPU
 
 ```
 conda activate textgen
@@ -94,7 +94,7 @@ If you have an NVIDIA GPU then you can also simultaneously monitor the system us
 Check out the Hugging Face leader board: https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard and then download any of the models you would like to try using the following commands:
 
 ```
-cd cd text-generation-webui
+cd text-generation-webui
 python3 download-model.py TheBloke/Wizard-Vicuna-13B-Uncensored-HF
 ```
 
@@ -102,3 +102,44 @@ Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model
 
 Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year. 
 
+## Retrieval Augmented Generation (RAG) on private documents
+
+To perform inferencing on private localized data on your system, perform the following tasks:
+1. Move to the doc-inferencing directory
+2. Activate the docs environment in conda
+3. Place any documents (type pdf, doc, docx, txt, xls, xlsx, csv, md or py) you would like to query in the SOURCE_DOCUMENTS directory
+4. Ingest the documents using ingest.py
+5. Run the doc inferencing using run_localGPT.py
+
+```
+cd doc-inferencing
+conda activate docs
+# Ingest docs
+python ingest.py
+# Run inferencing
+python run_localGPT.py
+```
+
+To place documents in the SOURCE_DOCUMENTS folder try using wget:
+
+```
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x210cm7-specsheet.pdf
+
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x9508-specsheet.pdf
+
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/cisco-ucs-6536-fabric-interconnect-spec-sheet.pdf
+
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x440p-specsheet.pdf
+```
+
+###Troubleshooting
+
+If wget doesn't work try the following workaround:
+
+```
+sudo vi /usr/lib/ssl/openssl.cnf
+
+#Add the following option to openssl.cnf
+[system_default_sect]
+Options = UnsafeLegacyRenegotiation
+```

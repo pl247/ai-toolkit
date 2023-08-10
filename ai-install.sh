@@ -52,7 +52,7 @@ source .bashrc
 echo -e "\n==================Create New Conda Environment==========================="
 sleep 1
 conda init bash
-conda create -n textgen python=3.10.9
+conda create -n textgen python=3.10.9 -y
 conda activate textgen
 
 # Install pytorch
@@ -65,6 +65,15 @@ echo -e "\n==================Installing WebUI===================================
 sleep 1
 git -C /home/ubuntu clone https://github.com/oobabooga/text-generation-webui
 pip install -r /home/ubuntu/text-generation-webui/requirements.txt
+
+# Install private document inferencing
+echo -e "\n==================Installing Document Inferencing======================================="
+conda init bash
+conda create -n docs python=3.10.9 -y
+conda activate docs
+sleep 1
+git -C /home/ubuntu clone https://github.com/PromtEngineer/localGPT doc-inferencing
+pip install -r /home/ubuntu/doc-inferencing/requirements.txt
 
 # Install first LLM model
 echo -e "\n==================Installing LLM Models=================================="
