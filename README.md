@@ -9,11 +9,14 @@ Generative AI is an exciting and emerging space. Running large language models (
   style="display: inline-block; margin: 0 auto; max-width: 150px">
 
 ##### Table of Contents
-[Overview](#overview)  
+[Overview](#overview)
+[Installing the AI-Toolkit](#installing-the-ai-toolkit)
+[Running the TextGen Server Software](#running-the-textgen-server-software)
+[Performing Inference on Private Documents](#performing-inference-on-private-documents)
+[Performance Tuning](#performance-tuning)
 
-
-<a name="overview"/>
 ## Overview
+
 This solution guide will assist you with the full installation of:
 1. Ubuntu linux operating system including various common utilities
 2. GCC compiler required for development using the NVIDIA parallel computing and programming environment (CUDA)
@@ -72,7 +75,11 @@ YOU WILL NEED TO REBOOT to activate your NVIDIA GPU drivers.
 sudo reboot
 ```
 
-## Running the TextGen server software for the first time using CPU
+## Running the TextGen Server Software
+
+Now that the system is fully installed, you can run the server software using either CPU or GPU (if installed).
+
+### Using CPU Only
 
 Activate the textgen environment in conda, move to the correct directory and start the text generation server:
 
@@ -85,7 +92,7 @@ python server.py --listen --auto-devices --chat --model-menu --cpu
 To access the application, open a web browser to your server IP address on port 7860.
 http://10.0.0.10:7860
 
-### Running the text-generation server software for the first time using A100-80GB GPU
+### Using GPU
 
 ```
 conda activate textgen
@@ -111,9 +118,9 @@ Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model
 
 Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year. 
 
-## Retrieval Augmented Generation (RAG) on Private Documents
+## Performing Inference on Private Documents
 
-To perform inferencing on private localized data on your system, perform the following tasks:
+This is often called Retrieval Augmented Generation (RAG). To perform inferencing on private localized data on your system, perform the following tasks:
 1. Move to the doc-inferencing directory
 2. Activate the docs environment in conda
 3. Place any documents (type pdf, doc, docx, txt, xls, xlsx, csv, md or py) you would like to query in the SOURCE_DOCUMENTS directory
