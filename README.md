@@ -10,9 +10,13 @@ Generative AI is an exciting and emerging space. Running large language models (
 
 ##### Table of Contents
 [Overview](#overview)
+
 [Installing the AI-Toolkit](#installing-the-ai-toolkit)
+
 [Running the TextGen Server Software](#running-the-textgen-server-software)
+
 [Performing Inference on Private Documents](#performing-inference-on-private-documents)
+
 [Performance Tuning](#performance-tuning)
 
 ## Overview
