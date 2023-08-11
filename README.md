@@ -10,7 +10,7 @@ Generative AI is an exciting and emerging space. Running large language models (
 
 ### Table of Contents
 1. [Overview](#overview)
-2. [Installing the AI-Toolkit](#installing-the-ai-toolkit)
+2. [Installing the AI Toolkit](#installing-the-ai-toolkit)
 3. [Running the TextGen Server Software](#running-the-textgen-server-software)
 4. [Performing Inference on Private Documents](#performing-inference-on-private-documents)
 5. [Performance Tuning](#performance-tuning)
@@ -33,7 +33,7 @@ This solution guide will assist you with the full installation of:
   title="AI Stack"
   style="display: inline-block; margin: 0 auto; max-width: 300px">
 
-## Installing the AI-Toolkit
+## Installing the AI Toolkit
 
 ### Pre-requisites
 
@@ -164,5 +164,6 @@ Options = UnsafeLegacyRenegotiation
 
 One of the nice things about Cisco UCS and Intersight is the ability to create specific policies for your desired configurations. For generative AI workloads you may wish to create a BIOS policy for your servers with changes from the defaults as per the following document:
 
-[Performance Tuning Guide] (#https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html)
+[Performance Tuning Guide] (https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html)
+
 
