@@ -1,6 +1,6 @@
-# AI-Toolkit: Automated Installation of Large Language Models on UCS X-Series
+# AI Toolkit: Automated Installation of Large Language Models on UCS X-Series
 
-Generative AI is an exciting and emerging space. Running large language models (LLMs) in the cloud can be both costly and expose proprietary data in unexpected ways. These issues can be avoided by deploying your AI workload on premise on a modern compute infrastructure. The purpose of this AI toolkit is to automate the full installation of some of the most popular open source software tools on Cisco UCS X-Series. The toolkit makes extensive use of the UCS X-fabric, PCIe node and GPU acceleration.   
+Generative AI is an exciting and emerging space. Running large language models (LLMs) in the cloud can be both costly and expose proprietary data in unexpected ways. These issues can be avoided by deploying your AI workload in a private data centre on modern compute infrastructure. The purpose of this generative AI toolkit is to automate the full installation of some of the most popular open source software tools on Cisco UCS X-Series. The toolkit makes extensive use of the UCS X-fabric, PCIe node and GPU acceleration.   
 
 <img
   src="x-series_gpu.jpg"
@@ -25,7 +25,7 @@ This solution guide will assist you with the full installation of:
 5. AI Monitor for monitoring CPU, memory, GPU and VRAM utilization on your system
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
-8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included
+8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included. Many Llama 2 based models have been tested and work.
 9. Software to perform inferencing on locally hosted private documents using LangChain, Chroma on the most popular HuggingFace embedding models and LLMs
 <img
   src="llm_stack.jpg"
