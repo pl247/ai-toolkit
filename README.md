@@ -8,6 +8,12 @@ Generative AI is an exciting and emerging space. Running large language models (
   title="UCS X-Series"
   style="display: inline-block; margin: 0 auto; max-width: 150px">
 
+##### Table of Contents
+[Overview](#overview)  
+
+
+<a name="overview"/>
+## Overview
 This solution guide will assist you with the full installation of:
 1. Ubuntu linux operating system including various common utilities
 2. GCC compiler required for development using the NVIDIA parallel computing and programming environment (CUDA)
@@ -137,7 +143,7 @@ wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-compu
 
 ### Troubleshooting
 
-If wget doesn't work try the following workaround:
+If `wget` doesn't work try the following workaround:
 
 ```
 sudo vi /usr/lib/ssl/openssl.cnf
@@ -146,3 +152,10 @@ sudo vi /usr/lib/ssl/openssl.cnf
 [system_default_sect]
 Options = UnsafeLegacyRenegotiation
 ```
+
+## Performance Tuning
+
+One of the nice things about Cisco UCS and Intersight is the ability to create specific policies for your desired configurations. For generative AI workloads you may wish to create a BIOS policy for your servers with changes from the defaults as per the following document:
+
+[Performance Tuning Guide] (https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html)
+
