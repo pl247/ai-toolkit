@@ -150,14 +150,26 @@ wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-compu
 
 ### Troubleshooting
 
-If `wget` doesn't work try the following workaround:
+If `wget` fails with the error message `unsafe legacy renegotiation disabled` try the following workaround:
 
 ```
 sudo vi /usr/lib/ssl/openssl.cnf
 
-#Add the following option to openssl.cnf
-[system_default_sect]
+#Add the following option to openssl.cnf under the [system_default_sect] section
 Options = UnsafeLegacyRenegotiation
+```
+
+To set the timezone on your system correctly:
+
+```
+# show current timezone with offset
+date +"%Z %z"
+
+# show timezone options for America
+timedatectl list-timezones | grep America
+
+# Set timezone
+sudo timedatectl set-timezone America/Winnipeg
 ```
 
 ## Performance Tuning
