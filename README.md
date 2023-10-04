@@ -1,4 +1,4 @@
-# AI Toolkit: Automated Installation of Large Language Models on UCS X-Series
+# AI Toolkit: Automated Installation of Generative AI Toolkit on UCS X-Series
 
 Generative AI is an exciting and emerging space. Running large language models (LLMs) in the cloud can be both costly and expose proprietary data in unexpected ways. These issues can be avoided by deploying your AI workload in a private data centre on modern compute infrastructure. The purpose of this generative AI toolkit is to automate the full installation of some of the most popular open source software tools on Cisco UCS X-Series. The toolkit makes extensive use of the UCS X-fabric, PCIe node and GPU acceleration.   
 
