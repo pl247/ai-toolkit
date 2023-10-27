@@ -159,7 +159,7 @@ sudo vi /usr/lib/ssl/openssl.cnf
 Options = UnsafeLegacyRenegotiation
 ```
 
-If you did not modify the timezone in the ```ucsx-ai-toolkit.cfg``` file. You can set the timezone on your system correctly post install:
+If you did not modify the timezone in the ```ucsx-ai-toolkit.cfg``` file, you can set the timezone on your system correctly post install:
 
 ```
 # show current timezone with offset
