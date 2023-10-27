@@ -48,12 +48,12 @@ In Intersight, derive and deploy a server-profile from a bare-metal linux templa
 
 ### 2. Install OS on Server
 
-From Intersight, select server and perform automated OS install. Use the custom OS install script from this repo called llm-bmaas.cfg You will want to modify the cloud-init settings for: password, address, gateway4 and nameservers.
+From Intersight, select server and perform automated OS install. Use the custom OS install script from this repo called ```ucsx-ai-toolkit.cfg``` for UCS X-series and ```ucsc-ai-toolkit.cfg``` for UCS C-series. You will want to modify the cloud-init settings for: password, address, gateway4 and nameservers.
 
 The following combination has been tested:
 1. OS Image - ubuntu-22.04.2-live-server-amd64.iso as version Ubuntu Server 22.04 LTS
 2. SCU Image - ucs-scu-6.3.1a.iso as version 6.3.1a
-3. OS Configuration File - llm-bmaas.cfg as version Ubuntu Server 22.04 LTS
+3. OS Configuration File - ucsx-ai-toolkit.cfg for X-Series and ucsc-ai-toolkit.cfg for C-Series as version Ubuntu Server 22.04 LTS
 
 Other combinations may work, but please try these before asking for assistance.
 
