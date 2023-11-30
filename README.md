@@ -86,7 +86,7 @@ Activate the textgen environment in conda, move to the correct directory and sta
 ```
 conda activate textgen
 cd text-generation-webui
-python server.py --listen --auto-devices --chat --model-menu --cpu
+python server.py --listen --auto-devices --model-menu --cpu
 ```
 
 To access the application, open a web browser to your server IP address on port 7860.
@@ -97,7 +97,7 @@ http://10.0.0.10:7860
 ```
 conda activate textgen
 cd text-generation-webui
-python server.py --listen --auto-devices --chat --model-menu --gpu-memory 76
+python server.py --listen --auto-devices --model-menu --gpu-memory 76
 ```
 
 If you have an NVIDIA GPU then you can also simultaneously monitor the system using the ai-monitor tool that was installed:
