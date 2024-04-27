@@ -1,0 +1,5 @@
+#!/bin/sh
+clear
+echo "Ingesting Source Documents"
+echo "----------------------------------------------------------"
+python ~/docs/ingest.py

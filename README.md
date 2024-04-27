@@ -148,11 +148,12 @@ wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-compu
 wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x440p-specsheet.pdf
 ```
 
-Before your run TAG for the first time, edit the constants.py file and comment out the EMBEDDING_MODEL_NAME, MODEL_ID and MODEL_BASENAME and replace with the following:
-
+Before your run RAG for the first time, edit the constants.py file and comment out the EMBEDDING_MODEL_NAME, MODEL_ID and MODEL_BASENAME and replace with the following:
+```
 EMBEDDING_MODEL_NAME = "hkunlp/instructor-xl" 
 MODEL_ID = "NousResearch/Llama-2-13b-chat-hf"
 MODEL_BASENAME = None
+```
 
 Feel free to experiment with other models.
 
@@ -166,6 +167,18 @@ sudo vi /usr/lib/ssl/openssl.cnf
 #Add the following option to openssl.cnf under the [system_default_sect] section
 Options = UnsafeLegacyRenegotiation
 ```
+
+If you get the error message 
+```
+`do_sample` is set to `False`. However, `temperature` is set to `0.2` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`. 
+```
+
+Then edit the file: 
+/home/ubuntu/.conda/envs/docs/lib/python3.10/site-packages/transformers/generation/configuration_utils.py
+
+Search for "detect sampling-only parameterization when not in sampling mode" and 
+comment the whole if section out.
+
 
 If you did not modify the timezone in the ```ucsx-ai-toolkit.cfg``` file, you can set the timezone on your system correctly post install:
 

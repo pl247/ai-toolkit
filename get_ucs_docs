@@ -1,0 +1,22 @@
+#!/bin/sh
+clear
+echo "Downloading Source Documents"
+echo "----------------------------------------------------------"
+echo "Clearing source directory...\n"
+cd ~/docs/SOURCE_DOCUMENTS
+rm -rfv ~/docs/SOURCE_DOCUMENTS/*.pdf
+echo "Done\n\n"
+
+echo "Copying UCS documents into source folder...\n"
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x210cm7-specsheet.pdf -P ~/docs/SOURCE_DOCUMENTS
+
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x9508-specsheet.pdf -P ~/docs/SOURCE_DOCUMENTS
+
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/cisco-ucs-6536-fabric-interconnect-spec-sheet.pdf -P ~/docs/SOURCE_DOCUMENTS
+
+wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x440p-specsheet.pdf -P ~/docs/SOURCE_DOCUMENTS
+
+echo "--------------------------------------------------------------------------"
+ls -s ~/docs/SOURCE_DOCUMENTS/*.pdf
+echo "--------------------------------------------------------------------------\n\n
+"

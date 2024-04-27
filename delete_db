@@ -1,0 +1,11 @@
+#!/bin/sh
+clear
+echo "Clearing database and resetting"
+echo "----------------------------------------------------------"
+rm -rfv ~/docs/DB/*
+echo ".\c"
+sleep .5
+echo ".\c"
+sleep .5
+echo ".\c"
+echo "\nDone\n"

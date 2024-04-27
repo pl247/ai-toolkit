@@ -7,12 +7,12 @@ sleep 3
 sudo mkdir /ai
 sudo mkdir /ai/software
 
-# Get NVIDIA GPU Drivers as well as CUDA
+# Get NVIDIA GPU Drivers
 echo -e "\n==================Get NVIDIA GPU Drivers================================="
 sleep 3
 sudo apt install nvidia-driver-550-open
 
-# 12.4 for 22.04
+# Get CUDA 12.4 for Ubuntu 22.04
 echo -e "\n==================Get CUDA 12.4========================================="
 sleep 3
 wget "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb"
@@ -48,19 +48,20 @@ source .bashrc
 echo -e "\n==================Create New Conda Environment==========================="
 sleep 1
 conda init bash
-conda create -n textgen python=3.10.9 -y
+#conda create -n textgen python=3.10.9 -y
+conda create -n textgen python=3.11 -y
 conda activate textgen
 
 # Install pytorch
 echo -e "\n==================Installing Pytorch====================================="
 sleep 1
-pip3 install torch torchvision torchaudio
+pip3 install torch==2.2.1 torchvision==0.17.1 torchaudio==2.2.1 --index-url https://download.pytorch.org/whl/cu121
 
 # Install web UI
 echo -e "\n==================Installing WebUI======================================="
 sleep 1
-git -C /home/ubuntu clone https://github.com/oobabooga/text-generation-webui
-pip install -r /home/ubuntu/text-generation-webui/requirements.txt
+git -C /home/ubuntu clone https://github.com/pl247/textgen
+pip install -r /home/ubuntu/textgen/requirements.txt
 
 # Install private document inferencing
 echo -e "\n==================Installing Document Inferencing======================================="
@@ -68,17 +69,26 @@ conda init bash
 conda create -n docs python=3.10.9 -y
 conda activate docs
 sleep 1
-git -C /home/ubuntu clone https://github.com/PromtEngineer/localGPT doc-inferencing
-pip install -r /home/ubuntu/doc-inferencing/requirements.txt
+git -C /home/ubuntu clone https://github.com/pl247/docs docs
+pip install -r /home/ubuntu/docs/requirements.txt
 
 # Install first LLM model
 echo -e "\n==================Installing LLM Models=================================="
-cd /home/ubuntu/text-generation-webui
+cd /home/ubuntu/textgen
 python3 download-model.py facebook/opt-350m
-#python3 download-model.py TheBloke/vicuna-7B-1.1-HF
-#python3 download-model.py TheBloke/vicuna-13B-1.1-HF
+
+# If you have 80GB VRAM
 #python3 download-model.py TheBloke/Wizard-Vicuna-30B-Uncensored-fp16
-#python3 download-model.py mistralai/Mistral-7B-Instruct-v0.2
+#If you have only 24GB VRAM
+#python3 download-model.py lmsys/vicuna-7b-v1.5
+
+# Making scripts executable
+echo -e "\n==================Making Scripts Executable============================="
+chmod a+x ~textgen/texgen
+chmod a+x ~docs/show_files
+chmod a+x ~docs/learn_docs
+chmod a+x ~docs/get_ucs_docs
+chmod a+x ~docs/delete_db
 
 # Clean up tasks
 echo -e "\n\n===============Restart the system with 'sudo reboot' for GPU to work =="

@@ -1,0 +1,2 @@
+#!/bin/sh
+python ~/textgen/server.py --listen --auto-devices --model-menu
