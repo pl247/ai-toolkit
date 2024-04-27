@@ -84,11 +84,11 @@ python3 download-model.py facebook/opt-350m
 
 # Making scripts executable
 echo -e "\n==================Making Scripts Executable============================="
-chmod a+x ~textgen/texgen
-chmod a+x ~docs/show_files
-chmod a+x ~docs/learn_docs
-chmod a+x ~docs/get_ucs_docs
-chmod a+x ~docs/delete_db
+chmod a+x ~/textgen/textgen
+chmod a+x ~/docs/show_files
+chmod a+x ~/docs/learn_docs
+chmod a+x ~/docs/get_ucs_docs
+chmod a+x ~/docs/delete_db
 
 # Clean up tasks
 echo -e "\n\n===============Restart the system with 'sudo reboot' for GPU to work =="
