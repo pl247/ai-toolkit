@@ -8,12 +8,18 @@ sudo mkdir /ai
 sudo mkdir /ai/software
 
 # Get NVIDIA GPU Drivers as well as CUDA
-echo -e "\n==================Get NVIDIA GPU Drivers as well as CUDA=================="
+echo -e "\n==================Get NVIDIA GPU Drivers================================="
 sleep 3
+sudo apt install nvidia-driver-550-open
 
 # 12.4 for 22.04
-sudo apt install nvidia-driver-550-open
-sudo apt install cuda-toolkit-12-4
+echo -e "\n==================Get CUDA 12.4========================================="
+sleep 3
+wget "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb"
+sudo dpkg -i cuda-*.deb
+sudo apt update
+sudo apt -y install cuda-toolkit-12-4
+
 
 # Get AI Monitor
 echo -e "\n==================Get AI Monitor========================================="
