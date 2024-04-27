@@ -10,7 +10,7 @@ sudo mkdir /ai/software
 # Get NVIDIA GPU Drivers
 echo -e "\n==================Get NVIDIA GPU Drivers================================="
 sleep 3
-sudo apt install nvidia-driver-550-open
+sudo apt -y install nvidia-driver-550-open
 
 # Get CUDA 12.4 for Ubuntu 22.04
 echo -e "\n==================Get CUDA 12.4========================================="
