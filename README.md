@@ -62,7 +62,7 @@ Other combinations may work, but please try these before asking for assistance.
 
 SSH into the server for the first time as username ubuntu and run the following commands (one-time):
 ```
-wget https://github.com/pl247/ai-toolkit/blob/main/ai-toolkit-install-12-4.sh
+wget https://raw.githubusercontent.com/pl247/ai-toolkit/main/ai-toolkit-install-12-4.sh
 chmod a+x ai-toolkit-install-12-4.sh
 ./ai-toolkit-install-12-4.sh
 ```
