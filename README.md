@@ -52,7 +52,7 @@ From Intersight, select server and perform automated OS install. Use the custom 
 
 The following combination has been tested:
 1. OS Image - ubuntu-22.04.2-live-server-amd64.iso as version Ubuntu Server 22.04 LTS
-2. SCU Image - ucs-scu-6.3.1a.iso as version 6.3.1a
+2. SCU Image - ucs-scu-6.3.2b.iso.iso as version 6.3.2b
 3. OS Configuration File - ucsx-ai-toolkit.cfg for X-Series and ucsc-ai-toolkit.cfg for C-Series as version Ubuntu Server 22.04 LTS
 
 Other combinations may work, but please try these before asking for assistance.
@@ -62,9 +62,9 @@ Other combinations may work, but please try these before asking for assistance.
 
 SSH into the server for the first time as username ubuntu and run the following commands (one-time):
 ```
-wget https://github.com/pl247/ai-install/raw/main/ai-install.sh
-chmod a+x ai-install.sh
-./ai-install.sh
+wget https://github.com/pl247/ai-toolkit/blob/main/ai-toolkit-install-12-4.sh
+chmod a+x ai-toolkit-install-12-4.sh
+./ai-toolkit-install-12-4.sh
 ```
 
 Answer yes when asked if you want to proceed during the miniconda install.
@@ -148,6 +148,14 @@ wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-compu
 wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x440p-specsheet.pdf
 ```
 
+Before your run TAG for the first time, edit the constants.py file and comment out the EMBEDDING_MODEL_NAME, MODEL_ID and MODEL_BASENAME and replace with the following:
+
+EMBEDDING_MODEL_NAME = "hkunlp/instructor-xl" 
+MODEL_ID = "NousResearch/Llama-2-13b-chat-hf"
+MODEL_BASENAME = None
+
+Feel free to experiment with other models.
+
 ### Troubleshooting
 
 If `wget` fails with the error message `unsafe legacy renegotiation disabled` try the following workaround:
@@ -178,3 +186,4 @@ One of the nice things about Cisco UCS and Intersight is the ability to create s
 
 [Performance Tuning Guide](https://www.cisco.com/c/en/us/products/collateral/servers-unified-computing/ucs-b-series-blade-servers/performance-tuning-guide-ucs-m6-servers.html)
 
+For faster boot times, create a BIOS profile with “Adaptive Memory Training” enabled. This setting is enabled under Server Management section.
