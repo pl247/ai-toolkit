@@ -1,5 +1,6 @@
 #!/bin/sh
-echo "\n\nFiles to Ingest"
-echo "--------------------------------------------------------------------------"
-ls -s ~/docs/SOURCE_DOCUMENTS/*.pdf
-echo "--------------------------------------------------------------------------\n\n"
+clear
+echo "Running Retrieval Augmented Generation on Source Documents"
+echo "----------------------------------------------------------"
+python run_localGPT.py
+

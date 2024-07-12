@@ -121,19 +121,20 @@ Note - the the OPT-350 LLM was included mostly to show how far things have progr
 ## Performing Inference on Private Documents
 
 This is often called Retrieval Augmented Generation (RAG). To perform inferencing on private localized data on your system, perform the following tasks:
-1. Move to the doc-inferencing directory
-2. Activate the docs environment in conda
-3. Place any documents (type pdf, doc, docx, txt, xls, xlsx, csv, md or py) you would like to query in the SOURCE_DOCUMENTS directory
-4. Ingest the documents using ingest.py
-5. Run the doc inferencing using run_localGPT.py
+1. Move to the docs directory
+2. Place any documents (type pdf, doc, docx, txt, xls, xlsx, csv, md or py) you would like to query in the SOURCE_DOCUMENTS directory
+3. Ingest the documents using learn_docs
+4. Run the doc inferencing using rag
 
 ```
 cd doc-inferencing
-conda activate docs
-# Ingest docs
-python ingest.py
-# Run inferencing
-python run_localGPT.py
+conda activate
+# Delete any previous database entries
+./delete_db
+# Ingest documents from the SOURCE_DOCUMENTS folder
+./learn_docs
+# Run retrieval augmented generation
+./rag
 ```
 
 To place documents in the SOURCE_DOCUMENTS folder try using wget:
