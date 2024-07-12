@@ -25,7 +25,7 @@ This solution guide will assist you with the full installation of:
 5. AI Monitor for monitoring CPU, memory, GPU and VRAM utilization on your system
 6. WebUI simple user interface for testing and fine-tuning large language models
 7. OpenAI compatible API
-8. Various LLMs such as Vicuna and Meta Open Pre-Trained Transformer models. Utility to download additional models from Hugging Face is included. Many Llama 2 based models have been tested and work.
+8. Various LLMs such as Meta Llama and Microsoft Phi models. Utility to download additional models from Hugging Face is included. Many Llama 3 based models have been tested and work.
 9. Software to perform inferencing on locally hosted private documents using LangChain, Chroma on the most popular HuggingFace embedding models and LLMs
 <img
   src="llm_stack.jpg"
@@ -37,7 +37,7 @@ This solution guide will assist you with the full installation of:
 
 ### Pre-requisites
 
-1. Cisco UCS X-series w/ X440p PCIe node and NVIDIA A100 GPU
+1. Cisco UCS X-series w/ X440p PCIe node and NVIDIA L4, L40, L40S, H100 or A100 GPU
 2. Cisco Intersight account
 
 ### 1. Create Server Profile
@@ -62,12 +62,10 @@ Other combinations may work, but please try these before asking for assistance.
 
 SSH into the server for the first time as username ubuntu and run the following commands (one-time):
 ```
-wget https://raw.githubusercontent.com/pl247/ai-toolkit/main/ai-toolkit-install-12-4.sh
-chmod a+x ai-toolkit-install-12-4.sh
-./ai-toolkit-install-12-4.sh
+wget https://raw.githubusercontent.com/pl247/ai-toolkit/main/ai-toolkit-install-12-4.1.sh
+chmod a+x ai-toolkit-install-12-4.1.sh
+./ai-toolkit-install-12-4.1.sh
 ```
-
-Answer yes when asked if you want to proceed during the miniconda install.
 
 YOU WILL NEED TO REBOOT to activate your NVIDIA GPU drivers.
 
@@ -79,28 +77,18 @@ sudo reboot
 
 Now that the system is fully installed, you can run the server software using either CPU or GPU (if installed).
 
-### Using CPU Only
-
 Activate the textgen environment in conda, move to the correct directory and start the text generation server:
 
 ```
 conda activate textgen
 cd text-generation-webui
-python server.py --listen --auto-devices --model-menu --cpu
+./textgen
 ```
 
 To access the application, open a web browser to your server IP address on port 7860.
 http://10.0.0.10:7860
 
-### Using GPU
-
-```
-conda activate textgen
-cd text-generation-webui
-python server.py --listen --auto-devices --model-menu --gpu-memory 76
-```
-
-If you have an NVIDIA GPU then you can also simultaneously monitor the system using the ai-monitor tool that was installed:
+Monitor the system using the ai-monitor tool that was installed as part of the toolkit:
 ```
 /ai/ai-monitor/ai-monitor
 ```
@@ -115,8 +103,6 @@ python3 download-model.py TheBloke/Wizard-Vicuna-13B-Uncensored-HF
 ```
 
 Substitute <TheBloke/Wizard-Vicuna-13B-Uncensored-HF> for any Hugging Face model you would like.
-
-Note - the the OPT-350 LLM was included mostly to show how far things have progressed in less than 1 year. 
 
 ## Performing Inference on Private Documents
 
@@ -149,14 +135,7 @@ wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-compu
 wget https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-x-series-modular-system/x440p-specsheet.pdf
 ```
 
-Before your run RAG for the first time, edit the constants.py file and comment out the EMBEDDING_MODEL_NAME, MODEL_ID and MODEL_BASENAME and replace with the following:
-```
-EMBEDDING_MODEL_NAME = "hkunlp/instructor-xl" 
-MODEL_ID = "NousResearch/Llama-2-13b-chat-hf"
-MODEL_BASENAME = None
-```
-
-Feel free to experiment with other models.
+Feel free to experiment with other models by updating the constants.py file.
 
 ### Troubleshooting
 
