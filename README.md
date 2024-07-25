@@ -81,7 +81,7 @@ Activate the textgen environment in conda, move to the correct directory and sta
 
 ```
 conda activate textgen
-cd text-generation-webui
+cd textgen
 ./textgen
 ```
 
@@ -113,7 +113,7 @@ This is often called Retrieval Augmented Generation (RAG). To perform inferencin
 4. Run the doc inferencing using rag
 
 ```
-cd doc-inferencing
+cd docs
 conda activate
 # Delete any previous database entries
 ./delete_db
